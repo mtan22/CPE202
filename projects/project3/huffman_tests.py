@@ -95,11 +95,6 @@ class TestList(unittest.TestCase):
         with self.assertRaises(FileNotFoundError):
             huffman_decode("file3.txt", "file3_soln.txt")
 
-    def test_decode_04(self) -> None:
-        huffman_decode("empty.txt", "empty_soln.txt")
-        # detect errors by comparing your encoded file with a *known* solution file
-        self.assertTrue(compare_files("empty.txt", "empty_soln.txt"))
-
 # Compare files - takes care of CR/LF, LF issues
 def compare_files(file1: str, file2: str) -> bool: # pragma: no cover
     match = True
